@@ -130,7 +130,7 @@ function events.enable()
       'WinEnter', 'WinLeave',
     },
     {
-      callback = function() render.update() end,
+      callback = vim.schedule_wrap(render.update),
       group = augroup_render,
     }
   )
